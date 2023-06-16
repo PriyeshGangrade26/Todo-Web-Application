@@ -23,6 +23,11 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
+// Root route handler
+app.get("/", (req, res) => {
+  res.send("To-Do-App Server");
+});
+
 // Routes
 app.use("/user", userRoutes);
 app.use("/todo", todoRoutes);
